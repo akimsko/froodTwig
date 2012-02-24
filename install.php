@@ -30,3 +30,9 @@ foreach ($libs as $lib) {
 
 	system('cd ' . escapeshellarg($installPath) . ' && git fetch origin && git reset --hard ' . escapeshellarg($lib['ver']));
 }
+
+// Make the cache folder
+$cacheFolder = escapeshellarg(dirname(__FILE__) . '/cache');
+`mkdir -p $cacheFolder`;
+`chmod a+rw $cacheFolder`;
+
