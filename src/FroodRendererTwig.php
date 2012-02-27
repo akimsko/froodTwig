@@ -20,6 +20,9 @@ class FroodRendererTwig extends FroodRendererTemplate {
 	/** @var string The content type. */
 	protected $_contentType = 'text/html';
 
+	/** @var string The path to look for overridden templates. */
+	protected static $_themePath;
+
 	/**
 	 * The Frood calls this when appropriate.
 	 * It should output directly.
@@ -31,12 +34,25 @@ class FroodRendererTwig extends FroodRendererTemplate {
 
 		Twig_Autoloader::register();
 
-		$loader = new Twig_Loader_String();
+		if (isset(self::$_themePath)) {
+			$paths = array(
+				self::$_themePath,
+				self::$_themePath . '/' . $this->_request->getModule(),
+				Frood::getFroodConfiguration()->getTemplatesPath($this->_request->getModule()),
+			);
+		} else {
+			$paths = array(
+				Frood::getFroodConfiguration()->getTemplatesPath($this->_request->getModule()),
+			);
+		}
+
+		$loader = new FroodRendererTwigTemplateLoader($paths);
+
 		$twig = new Twig_Environment($loader, array(
 			'cache' => realpath(dirname(__FILE__) . '/../cache'),
 		));
 
-		echo $twig->render(file_get_contents($this->_getTemplate()), $values);
+		echo $twig->render($this->_getTemplateFile(), $values);
 	}
 
 	/**
@@ -46,5 +62,20 @@ class FroodRendererTwig extends FroodRendererTemplate {
 	 */
 	protected function _getTemplateFileExtension() {
 		return 'html.twig';
+	}
+
+	/**
+	 * Set the path that the renderer will use to look for overridden templates.
+	 *
+	 * @param string $path
+	 *
+	 * @throws FroodExceptionConfiguration If the path does not exist.
+	 */
+	public static function setThemePath($path) {
+		if ($realpath = realpath($path)) {
+			self::$_themePath = $realpath;
+		} else {
+			throw new FroodExceptionConfiguration("Cannot set theme path to non-existent path, $path.");
+		}
 	}
 }

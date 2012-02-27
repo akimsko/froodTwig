@@ -10,7 +10,11 @@ FroodTwig is a Twig template engine extension for [The Frood VC framework](https
 Documentation
 -------------
 
-Coming soon... ;)
+  * Template files should end with `.html.twig`.
+  * `extends` use references of the form `[subModule]/[controller]/[action].html.twig`, i.e. `public/index/index.html.twig`.
+  * To extend the original template prefix the reference with `original:`, i.e. `original:public/index/index.html.twig`.
+  * To extend a template refererenced from the root of the theme folder, use the prefix `theme:`.
+  * To enable support for the prefixes and template overloading you will need to set the theme path by calling `FroodRendererTwig::setThemePath()`. _Zaphod will do this for you_.
 
 
 Installing
