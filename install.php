@@ -13,7 +13,7 @@ $libs = array(
     array(
         'lib' => 'twig',
         'url' => 'http://github.com/fabpot/Twig.git',
-        'ver' => 'origin/master',
+        'ver' => 'v1.6.0',
     ),
 );
 
