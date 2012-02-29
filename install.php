@@ -2,9 +2,9 @@
 <?php
 /**
  * This file is part of the froodTwig Frood extension.
- * @link https://github.com/Ibmurai/zaphod
+ * @link https://github.com/akimsko/froodTwig
  *
- * @copyright Copyright 2011 Jens Riisom Schultz
+ * @copyright Copyright 2011 Bo Thinggaard
  * @license   http://www.apache.org/licenses/LICENSE-2.0
  */
 set_time_limit(0);

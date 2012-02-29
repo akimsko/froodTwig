@@ -1,9 +1,9 @@
 <?php
 /**
  * This file is part of the froodTwig Frood extension.
- * @link https://github.com/Ibmurai/zaphod
+ * @link https://github.com/akimsko/froodTwig
  *
- * @copyright Copyright 2011 Jens Riisom Schultz
+ * @copyright Copyright 2011 Bo Thinggaard
  * @license   http://www.apache.org/licenses/LICENSE-2.0
  */
 /**
@@ -13,8 +13,9 @@
  *
  * @category   Frood
  * @package    Renderer
- * @subPackage Twig
+ * @subpackage Twig
  * @author     Jens Riisom Schultz <ibber_of_crew42@hotmail.com>
+ * @author     Bo Thinggaard <akimsko@tnactas.dk>
  */
 class FroodRendererTwig extends FroodRendererTemplate {
 	/** @var string The content type. */

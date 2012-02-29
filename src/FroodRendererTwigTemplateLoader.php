@@ -1,23 +1,19 @@
 <?php
 /**
- * TODO_DOCUMENT_ME
+ * This file is part of the froodTwig Frood extension.
+ * @link https://github.com/akimsko/froodTwig
  *
- * PHP version 5
- *
- * @category TODO_DOCUMENT_ME
- * @package  TODO_DOCUMENT_ME
- * @author   Jens Riisom Schultz <jers@fynskemedier.dk>
- * @since    2012-TODO-
+ * @copyright Copyright 2011 Bo Thinggaard
+ * @license   http://www.apache.org/licenses/LICENSE-2.0
  */
-
 /**
- * TODO_DOCUMENT_ME
+ * A custom template loader for Twig. It supports theme: and original: prefixes.
  *
  * @category   Frood
  * @package    Renderer
  * @subpackage Twig
- * @author     Jens Riisom Schultz <jers@fynskemedier.dk>
- * @author     Jens Riisom Schultz <jers@fynskemedier.dk>
+ * @author     Jens Riisom Schultz <ibber_of_crew42@hotmail.com>
+ * @author     Bo Thinggaard <akimsko@tnactas.dk>
  */
 class FroodRendererTwigTemplateLoader extends Twig_Loader_Filesystem {
 	/**
