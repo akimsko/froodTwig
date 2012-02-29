@@ -6,6 +6,7 @@
  * @copyright Copyright 2011 Bo Thinggaard
  * @license   http://www.apache.org/licenses/LICENSE-2.0
  */
+require_once dirname(__FILE__) . '/../twig/lib/Twig/Autoloader.php';
 /**
  * A renderer for the Twig template engine.
  *
@@ -25,16 +26,23 @@ class FroodRendererTwig extends FroodRendererTemplate {
 	protected static $_themePath;
 
 	/**
+	 * The constructor.
+	 *
+	 * @param string $request
+	 */
+	public function __construct(FroodRequest $request) {
+		parent::__construct($request);
+
+		Twig_Autoloader::register();
+	}
+
+	/**
 	 * The Frood calls this when appropriate.
 	 * It should output directly.
 	 *
 	 * @param array &$values The values assigned to the controller.
 	 */
 	public function render(array &$values) {
-		require_once dirname(__FILE__) . '/../twig/lib/Twig/Autoloader.php';
-
-		Twig_Autoloader::register();
-
 		if (isset(self::$_themePath)) {
 			$paths = array(
 				self::$_themePath,
