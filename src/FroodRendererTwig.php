@@ -44,11 +44,16 @@ class FroodRendererTwig extends FroodRendererTemplate {
 	 */
 	public function render(array &$values) {
 		if (isset(self::$_themePath)) {
-			$paths = array(
-				self::$_themePath,
-				self::$_themePath . '/' . $this->_request->getModule(),
-				Frood::getFroodConfiguration()->getTemplatesPath($this->_request->getModule()),
-			);
+			$paths = array();
+			if (is_dir($path = self::$_themePath)) {
+				$paths[] = $path;
+			}
+			if (is_dir($path = self::$_themePath . '/' . $this->_request->getModule())) {
+				$paths[] = $path;
+			}
+			if (is_dir($path = Frood::getFroodConfiguration()->getTemplatesPath($this->_request->getModule()))) {
+				$paths[] = $path;
+			}
 		} else {
 			$paths = array(
 				Frood::getFroodConfiguration()->getTemplatesPath($this->_request->getModule()),
