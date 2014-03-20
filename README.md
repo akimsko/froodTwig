@@ -20,7 +20,8 @@ Documentation
 Installing
 ----------
 
-  * Run `install.php` from command line.
+  * Get composer at https://getcomposer.org/download/
+  * Run `composer.phar install`
   * Prosper.
 
 

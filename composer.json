@@ -1,0 +1,27 @@
+{
+	"name": "frood/twig",
+	"description": "Twig extension for The Frood VC framework.",
+	"license": "Apache-2.0",
+	"authors": [
+		{
+			"name": "Bo Thinggaard",
+			"email": "bo@unpossiblesystems.dk",
+			"homepage":  "https://github.com/akimsko"
+		},
+		{
+			"name": "Jens Riisom Schultz",
+			"email": "jens@unpossiblesystems.dk",
+			"homepage":  "https://github.com/ibmurai"
+		}
+	],
+	"required": {
+		"php": ">=5.2.7",
+		"twig/twig": "~1.6",
+		"frood/frood": "~1.3"
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "1.0.x-dev"
+		}
+	}
+}
