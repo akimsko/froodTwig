@@ -6,7 +6,7 @@
  * @copyright Copyright 2011 Bo Thinggaard
  * @license   http://www.apache.org/licenses/LICENSE-2.0
  */
-require_once dirname(__FILE__) . '/../twig/lib/Twig/Autoloader.php';
+
 /**
  * A renderer for the Twig template engine.
  *
@@ -28,7 +28,7 @@ class FroodRendererTwig extends FroodRendererTemplate {
 	/**
 	 * The constructor.
 	 *
-	 * @param string $request
+	 * @param FroodRequest $request
 	 */
 	public function __construct(FroodRequest $request) {
 		parent::__construct($request);
