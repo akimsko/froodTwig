@@ -1,6 +1,9 @@
 {
 	"name": "frood/twig",
 	"description": "Twig extension for The Frood VC framework.",
+	"keywords": ["frood", "builder", "template"],
+	"homepage": "https://github.com/akimsko/froodTwig",
+	"type": "library",
 	"license": "Apache-2.0",
 	"authors": [
 		{
@@ -15,7 +18,7 @@
 		}
 	],
 	"require": {
-		"php": ">=5.2.7",
+		"php": ">=5.3.3",
 		"twig/twig": "~1.6",
 		"frood/frood": "~1.3"
 	},
